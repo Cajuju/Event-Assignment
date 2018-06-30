@@ -1,0 +1,45 @@
+.DrawerToggle {
+    width: 40px;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-right: 15px;
+    z-index: 100;
+    transition: transform .3s linear;
+}
+
+.Open {
+    transform: rotate(-180deg);
+}
+
+.Open div {
+    background-color: #27ae60;
+}
+
+.Close {
+    transform: rotate(0deg);
+}
+
+.Close div {
+    background-color: white;
+}
+
+
+
+/* Creates a div with three bars where each one is the hamburger menu */
+.DrawerToggle div {
+    width: 90%;
+    height: 3px;
+}
+
+
+@media (min-width: 500px) {
+    .DrawerToggle {
+        display: none;
+    }
+}

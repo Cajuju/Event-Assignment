@@ -1,0 +1,67 @@
+.Input {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.Input p {
+    color: red;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 0;
+    font-size: 3.5vw;
+}
+
+.Input textarea {
+    resize: none;
+    height: 25vh;
+}
+
+/* Note: you must specify input and textare to change their properties */
+.Input input,
+.Input textarea {
+    font-size: 5vw;
+    box-sizing: border-box;
+    outline: none;
+    border: 1px solid #2c3e50;
+    padding: 3px;
+}
+
+.Input input:focus,
+.Input textarea:focus {
+    border: 5px solid #2980b9;
+}
+
+/* Styling for form error */
+.Error input,
+.Error textarea {
+    border: 3px solid red;
+}
+
+.Error input:focus,
+.Error textarea:focus {
+    border: 5px solid red;
+}
+
+/* Styling for form success */
+.Success input,
+.Success textarea {
+    border: 3px solid green;
+}
+
+.Success input:focus,
+.Success textarea:focus {
+    border: 5px solid green;
+}
+
+@media (min-width: 499px) {
+    .Input input,
+    .Input textarea {
+        font-size: 4vh;
+    }
+
+    .Input p {
+        font-size: 1.5vw;
+    }
+
+}

@@ -1,0 +1,27 @@
+.MyTickets {
+    margin-top: 30px;
+    text-align: center;
+
+}
+
+.MyTickets h5 {
+    margin: 0;
+    font-size: 3vw;
+}
+
+.Cards {
+    /* display: flex;
+    flex-direction: column; */
+    margin: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (min-width: 750px) {
+    .Cards {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}

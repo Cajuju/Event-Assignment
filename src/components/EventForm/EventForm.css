@@ -1,0 +1,58 @@
+.EventForm {
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 5vw;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.EventForm p {
+    margin: 3px;
+    margin-top: 5px;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-align: left;
+    font-size: 2vh;
+}
+
+.EventForm button {
+    margin: 20px auto;
+    font-size: 5vh;
+    color: white;
+    background-color: #24496e;
+    padding: 10px 10px;
+    border: 3px solid white;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.EventForm button:hover {
+    color: #0bc257;
+    border: 3px solid #0bc257;
+}
+
+.EventForm button:disabled {
+    background-color: rgb(219, 219, 219);
+    border: 0;
+}
+
+.EventForm button:disabled:hover {
+    color: white;
+}
+
+@media (min-width: 799px) {
+    .EventForm {
+        font-size: 1.5vw;
+        width: 50%;
+    }
+
+    .EventForm p {
+        font-size: 4vh;
+    }
+
+    .EventForm button {
+        font-size: 2vw;
+    }
+}

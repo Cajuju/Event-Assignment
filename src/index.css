@@ -1,0 +1,6 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* Open Sans is our main font and sans-serif is our backup font */
+  font-family: "Verdana", sans-serif;
+}

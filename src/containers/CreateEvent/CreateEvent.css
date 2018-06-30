@@ -1,0 +1,14 @@
+.CreateEvent {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.CreateEvent h3,
+.CreateEvent h4 {
+    margin: 0;
+    margin-top: 10px;
+}

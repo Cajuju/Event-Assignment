@@ -1,0 +1,62 @@
+.AuthForm {
+    margin: 0 auto;
+    margin-top: 15px;
+    font-size: 5vw;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.AuthForm p {
+    margin: 3px;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+
+.AuthForm button {
+    margin: 20px auto;
+    font-size: 5vw;
+    color: white;
+    background-color: #24496e;
+    padding: 5px 7px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.AuthForm button:hover {
+    color: #0bc257;
+    border: 3px solid #0bc257;
+}
+
+.AuthForm button:disabled {
+    background-color: rgb(219, 219, 219);
+    border: 0;
+}
+
+.AuthForm button:disabled:hover {
+    color: white;
+}
+
+.SignUp {
+    text-align: center;
+}
+
+.SignUp p:nth-child(3) {
+    text-decoration: underline;
+}
+
+.SignUp p:nth-child(3):hover {
+    color: #0bc257;
+}
+
+@media (min-width: 499px) {
+    .AuthForm {
+        font-size: 3vw;
+    }
+
+    .AuthForm button {
+        font-size: 2vw;
+    }
+}

@@ -1,0 +1,41 @@
+// Auth Action Types
+export const AUTH_START = 'AUTH_START';
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
+export const AUTH_FAIL = 'AUTH_FAIL';
+export const AUTH_SIGNOUT = 'AUTH_SIGNOUT';
+
+// Event Action Types
+export const CREATE_EVENT = 'CREATE_EVENT';
+export const CREATE_EVENT_START = 'CREATE_EVENT_START';
+export const CREATE_EVENT_SUCCESS = 'CREATE_EVENT_SUCCESS';
+export const CREATE_EVENT_FAIL = 'CREATE_EVENT_FAIL';
+
+// Fetch Event Action Types
+export const FETCH_EVENTS = 'FETCH_EVENTS';
+export const FETCH_EVENTS_START = 'FETCH_EVENTS_START';
+export const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS';
+export const FETCH_EVENTS_FAIL = 'FETCH_EVENTS_FAIL';
+export const RESET_EVENT_REDUCERS = 'RESET_EVENT_REDUCERS';
+
+// Fetch Single Event Action Types
+export const FETCH_EVENT = 'FETCH_EVENT';
+export const FETCH_EVENT_START = 'FETCH_EVENT_START';
+export const FETCH_EVENT_SUCCESS = 'FETCH_EVENT_SUCCESS';
+export const FETCH_EVENT_FAIL = 'FETCH_EVENT_FAIL';
+
+// Fetch My Events Action Types
+export const FETCH_MY_EVENTS = 'FETCH_MY_EVENTS';
+export const FETCH_MY_EVENTS_SUCCESS = 'FETCH_MY_EVENTS_SUCCESS';
+
+// Ordering Tickets Action Types
+export const ORDER_TICKET = 'ORDER_TICKET';
+export const ORDER_TICKET_START = 'ORDER_TICKET_START';
+export const ORDER_TICKET_SUCCESS = 'ORDER_TICKET_SUCCESS';
+export const ORDER_TICKET_FAIL = 'ORDER_TICKET_FAIL';
+
+// Fetch My Tickets Action Types
+export const FETCH_MY_TICKETS = 'FETCH_MY_TICKETS';
+export const FETCH_MY_TICKETS_START = 'FETCH_MY_TICKETS_START';
+export const FETCH_MY_TICKETS_SUCCESS = 'FETCH_MY_TICKETS_SUCCESS';
+export const FETCH_MY_TICKETS_FAIL = 'FETCH_MY_TICKETS_FAIL';
+export const RESET_ORDER_REDUCERS = 'RESET_ORDER_REDUCERS';

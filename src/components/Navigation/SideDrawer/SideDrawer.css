@@ -1,0 +1,30 @@
+.SideDrawer {
+    position: fixed;
+    width: 280px;
+    max-width: 40%;
+    right: 2px;
+    top: 0px;
+    z-index: 200;
+    background-color: white;
+    padding: 0;
+    box-sizing: border-box;
+    transition: transform 0.3s linear;
+    background-color: rgb(51, 73, 94);
+    color: white;
+    z-index: 99;
+}
+
+.Close {
+    transform: translateY(60px);
+}
+
+.Open {
+    transform:  translateY(-100%);
+}
+
+/* This media query is for devices larger than 500px */
+@media (min-width: 500px) {
+    .SideDrawer {
+        display: none;
+    }
+}
