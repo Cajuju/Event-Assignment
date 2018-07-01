@@ -13,12 +13,18 @@ import * as actions from '../../store/actions/index';
 class EventList extends Component {
 
     componentDidMount = () => {
-        if (!this.props.events) {
-            this.props.onFetchEvents();
-        }
+        this.props.onFetchEvents();
         if (this.props.token && !this.props.tickets) {
             this.props.onFetchMyTickets(this.props.token, this.props.userId);
         }
+    }
+
+    shouldComponentUpdate = (nextProps) => {
+        return this.props.events !== nextProps.events
+    }
+
+    componentWillUpdate = () => {
+        this.props.onFetchEvents();
     }
 
     getFormattedTime = (time) => {

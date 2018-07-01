@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import { FIREBASE_API_KEY } from '../../constants/api_keys';
 import * as actionTypes from './actionTypes';
 
 // auth is called when the user signs in or signs up
@@ -11,9 +11,9 @@ export const auth = (name, email, password, isSignUp) => {
             password: password,
             returnSecureToken: true
         };
-        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyC7qZpZgWVHIpK6NOxqwaoAqlYerc1fS_E';
+        let url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=${FIREBASE_API_KEY}`;
         if(isSignUp === false) {
-            url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyC7qZpZgWVHIpK6NOxqwaoAqlYerc1fS_E'
+            url = `https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=${FIREBASE_API_KEY}`
         }
         axios.post(url, authData)
             .then(response => {

@@ -81,10 +81,6 @@ class Auth extends Component {
         return false;
     }
 
-    checkPasswords = () => {
-        return this.state.form.password.valid === this.state.form.reTypePassword.valid;
-    }
-
     inputChangeHandler = (event, formName) => {
         const updatedForms = {
             ...this.state.form,
@@ -106,14 +102,9 @@ class Auth extends Component {
             formValid.push(updatedForms.email.valid);
             formValid.push(updatedForms.password.valid);
         }
-        disable = formValid.includes(false);
-        const passwordCheck = this.checkPasswords();
+        disable = formValid.includes(false);        
 
-        const result = (!disable === true && passwordCheck === true);
-        console.log(result)
-        
-
-        this.setState({form: updatedForms, btnDisabled: result });
+        this.setState({form: updatedForms, btnDisabled: disable });
     }
 
     submitHandler = (event) => {

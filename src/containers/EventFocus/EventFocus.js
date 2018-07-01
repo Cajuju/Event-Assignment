@@ -18,6 +18,7 @@ class EventFocus extends Component {
     }
 
     componentDidMount = () => {
+        console.log('fetching event')
         const { eventName, userId } = this.props.match.params;
         this.props.onFetchEvent(eventName, userId);
     }
@@ -72,6 +73,7 @@ class EventFocus extends Component {
             content = <Spinner />
         }
 
+        console.log(this.props.selectedEvent);
         if (this.props.selectedEvent) {
             const { event, organizer, event_Id } = this.props.selectedEvent
             const time = this.getFormattedTime(event.time)

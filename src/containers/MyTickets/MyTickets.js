@@ -10,23 +10,22 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import * as actions from '../../store/actions/index';
 
 class MyTickets extends Component {
+
     componentDidMount = () => {
         if (this.props.token) {
             this.props.onFetchMyTickets(this.props.token, this.props.userId);
         }
     }
 
-    // shouldComponentUpdate = (nextProps) => {
-    //     return !this.props.tickets || !this.props.token;
-    // }
+    shouldComponentUpdate = (nextProps) => {
+        return this.props.tickets !== nextProps.tickets
+    }
 
-    // componentWillUpdate = () => {
-    //     if (this.props.token) {
-    //         this.props.onFetchMyTickets(this.props.token, this.props.userId);
-    //     } else {
-    //         this.setState({ update: true });
-    //     }
-    // }
+    componentWillUpdate = () => {
+        if (this.props.token) {
+            this.props.onFetchMyTickets(this.props.token, this.props.userId);
+        }
+    }
 
     getFormattedTime = (time) => {
         const splitTime = time.split(':');
@@ -41,32 +40,36 @@ class MyTickets extends Component {
     render() {
         let content = null;
         let card = null;
+        let myTicketData = [];
         if (this.props.tickets) {
             if (this.props.tickets) {
                 for (let ticket in this.props.tickets) {
-                    const {events, organizer} = this.props.tickets[ticket];
-                    card = (
-                        <Link
-                            style={{textDecoration: 'none', color: 'black'}}
-                            to={this.props.match.url + '/' + events.name + "/" + organizer.userId}
-                            key={ticket}
-                        >
-                            <Card
-                                event={events}
-                                organizer={organizer}
-                                formatTime={(time) => this.getFormattedTime(time)}
-                                ticketPurchasedIcon={ticket_purchased}
-                                purchased={true}
-                            />
-                        </Link>
-                    );
+                    myTicketData.push(this.props.tickets[ticket])              
                 }
+                card = myTicketData.map((ticket, index) => {
+                    return (
+                        <div className={classes.Cards} key={index}>
+                            <Link
+                                style={{textDecoration: 'none', color: 'black'}}
+                                to={this.props.match.url + '/' + ticket.events.name + "/" + ticket.organizer.userId}
+                            >
+                                <Card
+                                    event={ticket.events}
+                                    organizer={ticket.organizer}
+                                    formatTime={(time) => this.getFormattedTime(time)}
+                                    ticketPurchasedIcon={ticket_purchased}
+                                    purchased={true}
+                                />
+                            </Link>
+                        </div>
+                    );
+                })
             } else {
                 card = <h1>You have no tickets</h1>
             }
             
             content = (
-                <div className={classes.Cards}>
+                <div className={classes.MyTickets}>
                     {card}
                 </div>
             )
@@ -76,7 +79,7 @@ class MyTickets extends Component {
             }
         }
         return (
-            <div className={classes.MyTickets}>
+            <div className={classes.Container}>
                 {content}
             </div>
         );

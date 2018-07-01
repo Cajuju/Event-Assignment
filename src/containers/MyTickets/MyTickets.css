@@ -1,7 +1,22 @@
-.MyTickets {
-    margin-top: 30px;
+.Container {
     text-align: center;
+}
 
+.Container h5 {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 5vw;
+}
+
+.MyTickets {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.MyTickets div {
+    flex: 0, 50%;
+    box-sizing: border-box;
 }
 
 .MyTickets h5 {
@@ -10,18 +25,17 @@
 }
 
 .Cards {
-    /* display: flex;
-    flex-direction: column; */
     margin: 10px;
     text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: calc(100% - 30px)
 }
 
 @media (min-width: 750px) {
+    .Container h5 {
+        font-size: 3vw;
+    }
+
     .Cards {
-        flex-direction: row;
-        justify-content: space-evenly;
+        width: calc(50% - 30px);
     }
 }
